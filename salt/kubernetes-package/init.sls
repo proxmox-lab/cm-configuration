@@ -26,7 +26,7 @@ apply sysctl params without reboot:
 
 containerd_install:
   archive.extracted:
-    - name: /opt
+    - name: /opt/containerd
     - source: https://github.com/containerd/containerd/releases/download/v1.4.4/cri-containerd-cni-1.4.4-linux-amd64.tar.gz
     - source_hash: 96641849cb78a0a119223a427dfdc1ade88412ef791a14193212c8c8e29d447b
     - user: root
@@ -35,7 +35,7 @@ containerd_install:
 
 /etc/systemd/system/multi-user.target.wants/containerd.service:
   file.symlink:
-    - target: /opt/containerd-1.4.4/containerd.service
+    - target: /opt/containerd/containerd.service
     - user: root
     - group: root
     - mode: 777
