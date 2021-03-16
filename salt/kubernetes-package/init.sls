@@ -41,12 +41,6 @@ containerd_install:
 #     - group: root
 #     - mode: 777
 
-containerd:
-  service.running:
-    - enable: True
-    - watch:
-      - file: /etc/containerd/config.toml
-
 /etc/containerd:
   file.directory:
     - user: root
@@ -58,3 +52,7 @@ configure containerd:
   cmd.run:
     - name: containerd config default | sudo tee /etc/containerd/config.toml
     - runas: root
+
+containerd:
+  service.running:
+    - enable: True
