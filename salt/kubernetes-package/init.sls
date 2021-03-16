@@ -55,9 +55,9 @@ configure containerd:
 
 use the systemd cgroup driver:
   file.blockreplace:
-    name: /etc/containerd/config.toml
-    insert_after_match: /\[.*runc\.options\]/
-    content: '             SystemdCgroup = true'
+    - name: /etc/containerd/config.toml
+    - insert_after_match: /\[.*runc\.options\]/
+    - content: '             SystemdCgroup = true'
 
 containerd:
   service.running:
