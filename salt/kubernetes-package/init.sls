@@ -24,7 +24,7 @@ apply sysctl params without reboot:
     - name: sysctl --system
     - runas: root
 
-containerd:
+containerd_install:
   archive.extracted:
     - name: /opt
     - source: https://github.com/containerd/containerd/releases/download/v1.4.4/cri-containerd-cni-1.4.4-linux-amd64.tar.gz
