@@ -34,13 +34,6 @@ containerd_install:
     - group: root
     - mode: 755
 
-# /etc/systemd/system/multi-user.target.wants/containerd.service:
-#   file.symlink:
-#     - target: /opt/containerd-1.4.4/containerd.service
-#     - user: root
-#     - group: root
-#     - mode: 777
-
 /etc/containerd:
   file.directory:
     - user: root
@@ -48,16 +41,12 @@ containerd_install:
     - mode: 755
     - makedirs: True
 
-configure containerd:
-  cmd.run:
-    - name: containerd config default | sudo tee /etc/containerd/config.toml
-    - runas: root
-
-# use the systemd cgroup driver:
-#   file.blockreplace:
-#     - name: /etc/containerd/config.toml
-#     - insert_after_match: /\[.*runc\.options\]/
-#     - content: '             SystemdCgroup = true'
+/etc/containerd/config.toml:
+  file.managed:
+    - source: salt://kubernetes-package/files/etc/containerd/config.toml
+    - user: root
+    - group: root
+    - mode: 644
 
 containerd:
   service.running:
