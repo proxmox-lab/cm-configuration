@@ -2,10 +2,10 @@ kubernetes-repo:
   pkgrepo.managed:
     - name: kubernetes
     - humanname: Kubernetes
-    - baseurl: https://packages.cloud.google.com/yum/repos/kubernetes-el7-\$basearch
+    - baseurl: https://packages.cloud.google.com/yum/repos/kubernetes-el7-x86_64
     - enabled: True
     - gpgcheck: 1
-    - gpgkey: https://packages.cloud.google.com/yum/doc/yum-key.gpg https://packages.cloud.google.com/yum/doc/rpm-package-key.gpg
+    - gpgkey: https://packages.cloud.google.com/yum/doc/yum-key.gpg
 
 /etc/modules-load.d/containerd.conf:
   file.managed:
