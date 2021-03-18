@@ -6,10 +6,9 @@ kubernetes-repo:
     - enabled: True
     - gpgcheck: 1
     - gpgkey: https://packages.cloud.google.com/yum/doc/yum-key.gpg https://packages.cloud.google.com/yum/doc/rpm-package-key.gpg
-    - kwargs: {
-        repo_gpgcheck: 1
-        exclude:  kubelet,kubeadm,kubectl
-      }
+    - kwargs:
+      repo_gpgcheck: 1
+      exclude:  kubelet,kubeadm,kubectls
 
 /etc/modules-load.d/containerd.conf:
   file.managed:
