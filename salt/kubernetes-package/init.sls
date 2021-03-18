@@ -7,9 +7,9 @@ kubernetes-repo:
     - gpgcheck: 1
     - gpgkey: https://packages.cloud.google.com/yum/doc/yum-key.gpg https://packages.cloud.google.com/yum/doc/rpm-package-key.gpg
     - kwargs: {
-      repo_gpgcheck: 1
-      exclude:  kubelet,kubeadm,kubectl
-    }
+        repo_gpgcheck: 1
+        exclude:  kubelet,kubeadm,kubectl
+      }
 
 /etc/modules-load.d/containerd.conf:
   file.managed:
@@ -65,7 +65,7 @@ containerd:
   service.running:
     - enable: True
 
-apply sysctl params without reboot:
+disable selinux:
   cmd.run:
     - name: setenforce 0
     - runas: root
