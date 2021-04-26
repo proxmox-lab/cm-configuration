@@ -5,7 +5,8 @@ kubernetes-repo:
     - baseurl: https://packages.cloud.google.com/yum/repos/kubernetes-el7-x86_64
     - enabled: True
     - gpgcheck: 1
-    - gpgkey: https://packages.cloud.google.com/yum/doc/yum-key.gpg
+    - repo_gpgcheck: 1
+    - gpgkey: https://packages.cloud.google.com/yum/doc/yum-key.gpg https://packages.cloud.google.com/yum/doc/rpm-package-key.gpg
 
 /etc/modules-load.d/containerd.conf:
   file.managed:
@@ -79,3 +80,10 @@ kubernetes.packages:
 kubelet:
   service.running:
     - enable: True
+
+# initialize kubernetes cluster:
+#   cmd.run:
+#     - name: |
+#       swapoff -a
+#       kubeadm init
+#     - runas: root
