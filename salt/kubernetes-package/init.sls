@@ -81,9 +81,16 @@ kubelet:
   service.running:
     - enable: True
 
-# initialize kubernetes cluster:
-#   cmd.run:
-#     - name: |
-#       swapoff -a
-#       kubeadm init
-#     - runas: root
+initialize kubernetes cluster:
+  cmd.run:
+    - name: |
+      swapoff -a
+      kubeadm init
+    - runas: root
+
+/root/.kube/config:
+  file.managed
+    - source: /etc/kubernetes/admin.conf
+    - user: root
+    - group: root
+    - mode: 600
