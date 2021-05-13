@@ -84,12 +84,12 @@ kubelet:
 initialize kubernetes cluster:
   cmd.run:
     - name: |
-      swapoff -a
-      kubeadm init
+        swapoff -a
+        kubeadm init
     - runas: root
 
 /root/.kube/config:
-  file.managed
+  file.managed:
     - source: /etc/kubernetes/admin.conf
     - user: root
     - group: root
