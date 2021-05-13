@@ -87,6 +87,7 @@ initialize kubernetes cluster:
         swapoff -a
         kubeadm init
     - runas: root
+    - unless: stat /etc/kubernetes/admin.conf
 
 /root/.kube/config:
   file.managed:
@@ -94,3 +95,4 @@ initialize kubernetes cluster:
     - user: root
     - group: root
     - mode: 600
+    - makedirs: True
