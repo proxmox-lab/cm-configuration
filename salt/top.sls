@@ -1,4 +1,7 @@
 base:
+  'os:CentOS':
+    - match: grain
+    - centos-core-package
   'roles:docker':
     - match: grain
     - docker-package
@@ -6,6 +9,9 @@ base:
     - match: grain
     - kubernetes-package
 development:
+  'os:CentOS':
+    - match: grain
+    - centos-core-package
   'roles:docker':
     - match: grain
     - docker-package
