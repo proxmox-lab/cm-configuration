@@ -2,6 +2,9 @@ base:
   'os:CentOS':
     - match: grain
     - centos-core-package
+  'G@os:CentOS and G@location:aws':
+    - match: compound
+    - centos-aws-package
   'roles:docker':
     - match: grain
     - docker-package
@@ -12,6 +15,9 @@ development:
   'os:CentOS':
     - match: grain
     - centos-core-package
+  'G@os:CentOS and G@location:aws':
+    - match: compound
+    - centos-aws-package
   'roles:docker':
     - match: grain
     - docker-package
