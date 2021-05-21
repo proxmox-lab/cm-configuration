@@ -5,6 +5,9 @@ base:
   'G@os:CentOS and G@location:aws':
     - match: compound
     - centos-aws-package
+  'G@os:CentOS and G@location:onprem':
+    - match: compound
+    - centos-vmware-package
   'roles:docker':
     - match: grain
     - docker-package
@@ -18,6 +21,9 @@ development:
   'G@os:CentOS and G@location:aws':
     - match: compound
     - centos-aws-package
+  'G@os:CentOS and G@location:onprem':
+    - match: compound
+    - centos-vmware-package
   'roles:docker':
     - match: grain
     - docker-package
