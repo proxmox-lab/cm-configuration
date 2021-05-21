@@ -1,4 +1,5 @@
 vmware-packages:
-  pkg.installed:
-    - sources:
-      - cloud-init-vmware-guestinfo: https://github.com/vmware/cloud-init-vmware-guestinfo/releases/download/v1.1.0/cloud-init-vmware-guestinfo-1.1.0-1.el7.noarch.rpm
+  cmd.run:
+    - name: install.sh
+    - source: https://raw.githubusercontent.com/vmware/cloud-init-vmware-guestinfo/master/install.sh
+    - unless: stat /usr/lib/python2.7/site-packages/cloudinit/sources/DataSourceVMwareGuestInfo.py
