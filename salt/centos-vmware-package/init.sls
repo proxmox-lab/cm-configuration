@@ -5,7 +5,7 @@ open-vm-tools:
 
 # Initially Installed via Kickstart Post Processor
 perl:
-  pkg
+  pkg:
     - installed
 
 vmware-packages:
