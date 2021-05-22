@@ -22,9 +22,9 @@ getpip:
     - reload_modules: True
 
 cloud-init:
-  pkg:
-    - installed
+  pkg.installed:
+    - version: 19.4
 
 jq:
-  pkg:
-    - installed
+  pkg.installed:
+    - version: 1.6
