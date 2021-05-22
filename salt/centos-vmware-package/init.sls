@@ -6,7 +6,7 @@ open-vm-tools:
 # Initially Installed via Kickstart Post Processor
 perl:
   pkg.installed:
-    - version: 5.16.3
+    - version: 5.16.3-299.el7_9.x86_64
 
 vmware-packages:
   cmd.script:
