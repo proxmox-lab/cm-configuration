@@ -16,7 +16,7 @@ python-pygit2:
 
 /usr/local/sbin/get-pip.py:
   file.managed:
-    - source: https://bootstrap.pypa.io/get-pip.py
+    - source: https://bootstrap.pypa.io/pip/2.7/get-pip.py
     - skip_verify: True
 
 getpip:
