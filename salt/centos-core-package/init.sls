@@ -12,14 +12,14 @@ python-pygit2:
   pkg.installed:
     - version: 0.26.4
 
-getpip:
-  cmd.run:
-    - name: /usr/bin/python /usr/local/sbin/get-pip.py
-    - unless: which pip
-    - require:
-      - pkg: python
-      - file: /usr/local/sbin/get-pip.py
-    - reload_modules: True
+# getpip:
+#   cmd.run:
+#     - name: /usr/bin/python /usr/local/sbin/get-pip.py
+#     - unless: which pip
+#     - require:
+#       - pkg: python
+#       - file: /usr/local/sbin/get-pip.py
+#     - reload_modules: True
 
 cloud-init:
   pkg.installed:
