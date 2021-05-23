@@ -14,7 +14,7 @@ vmware-packages:
     - unless: stat /usr/lib/python2.7/site-packages/cloudinit/sources/DataSourceVMwareGuestInfo.py
 
 /lib/systemd/system/vmtoolsd.service:
-  files.managed:
+  file.managed:
     - source: salt://centos-vmware-package/vmtoolsd.service
     - user: root
     - group: root
