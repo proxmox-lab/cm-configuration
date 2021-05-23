@@ -13,7 +13,7 @@ vmware-packages:
     - source: https://raw.githubusercontent.com/vmware/cloud-init-vmware-guestinfo/master/install.sh
     - unless: stat /usr/lib/python2.7/site-packages/cloudinit/sources/DataSourceVMwareGuestInfo.py
 
-/lib/systemd/system/vmtoolsd.service
+/lib/systemd/system/vmtoolsd.service:
   files.managed:
     - source: salt://centos-vmware-package/vmtoolsd.service
     - user: root
